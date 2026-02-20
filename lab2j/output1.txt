@@ -1,0 +1,1 @@
+Mode=custom, workers=3, delayMs=300

@@ -1,0 +1,35 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) // можно 17, если хочешь
+    }
+}
+
+application {
+    // главный класс без пакета
+    mainClass = 'ConcurrentList'
+}
+
+// дефолтные аргументы для run
+tasks.named('run') {
+    args 'custom', '3', '300'
+}
+
+// чтобы не было проблем с кодировкой
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+// манифест, чтобы java -jar знал точку входа
+jar {
+    manifest {
+        attributes 'Main-Class': 'ConcurrentList'
+    }
+}

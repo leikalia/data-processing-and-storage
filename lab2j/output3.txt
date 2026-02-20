@@ -1,0 +1,15 @@
+Mode=custom, workers=2, delayMs=10
+--- LIST (custom) attempts=1 swaps=0 ---
+Ny-100
+ny-010
+NY-001
+PARIS3
+paris2
+Paris1
+TOKYO
+Tokyo
+tokyo
+rio-2
+RIO
+Rio
+--- END ---

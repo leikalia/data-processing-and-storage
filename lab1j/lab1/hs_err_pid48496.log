@@ -1,0 +1,230 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes. Error detail: AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:44), pid=48496, tid=35100
+#
+# JRE version:  (21.0.8+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.8+9-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Duser.country=RU -Duser.language=ru -Duser.variant org.example.lab1.KeyClient --host 127.0.0.1 --port 5555 --name load012
+
+Host: 12th Gen Intel(R) Core(TM) i7-12650H, 16 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Mon Sep 29 22:56:38 2025 elapsed time: 0.097868 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000123938b4d70):  JavaThread "Unknown thread" [_thread_in_vm, id=35100, stack(0x0000001184a00000,0x0000001184b00000) (1024K)]
+
+Stack: [0x0000001184a00000,0x0000001184b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e1729]
+V  [jvm.dll+0x8bf47b]
+V  [jvm.dll+0x8c19aa]
+V  [jvm.dll+0x8c2083]
+V  [jvm.dll+0x289fd6]
+V  [jvm.dll+0xc3c07]
+V  [jvm.dll+0x338455]
+V  [jvm.dll+0x888e22]
+V  [jvm.dll+0x3cd611]
+V  [jvm.dll+0x871e5c]
+V  [jvm.dll+0x461261]
+V  [jvm.dll+0x462ea1]
+C  [jli.dll+0x52f0]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffbe3c96288, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+
+=>0x00000123938b4d70 (exited) JavaThread "Unknown thread"    [_thread_in_vm, id=35100, stack(0x0000001184a00000,0x0000001184b00000) (1024K)]
+Total: 1
+
+Threads with active compile tasks:
+Total: 0
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000000000000, size: 0 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.091 Loaded shared library C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7a1560000 - 0x00007ff7a156e000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\java.exe
+0x00007ffc90770000 - 0x00007ffc90968000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffc8e8d0000 - 0x00007ffc8e992000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffc8e220000 - 0x00007ffc8e516000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffc8dfd0000 - 0x00007ffc8e0d0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffc876b0000 - 0x00007ffc876c8000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\jli.dll
+0x00007ffc867f0000 - 0x00007ffc8680e000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\VCRUNTIME140.dll
+0x00007ffc8fcf0000 - 0x00007ffc8fe8d000 	C:\Windows\System32\USER32.dll
+0x00007ffc76f40000 - 0x00007ffc771db000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6280_none_60bc30a171f2f3f3\COMCTL32.dll
+0x00007ffc90110000 - 0x00007ffc901ae000 	C:\Windows\System32\msvcrt.dll
+0x00007ffc8e8a0000 - 0x00007ffc8e8cb000 	C:\Windows\System32\GDI32.dll
+0x00007ffc8e150000 - 0x00007ffc8e172000 	C:\Windows\System32\win32u.dll
+0x00007ffc8e650000 - 0x00007ffc8e769000 	C:\Windows\System32\gdi32full.dll
+0x00007ffc8e180000 - 0x00007ffc8e21d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffc8f150000 - 0x00007ffc8f17f000 	C:\Windows\System32\IMM32.DLL
+0x00007ffc87a00000 - 0x00007ffc87a0c000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\vcruntime140_1.dll
+0x00007ffc5aa00000 - 0x00007ffc5aa89000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\msvcp140.dll
+0x00007ffbe3040000 - 0x00007ffbe3dec000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\server\jvm.dll
+0x00007ffc8ec60000 - 0x00007ffc8ed11000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffc8f2f0000 - 0x00007ffc8f38f000 	C:\Windows\System32\sechost.dll
+0x00007ffc8f3b0000 - 0x00007ffc8f4d0000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffc8e5d0000 - 0x00007ffc8e5f7000 	C:\Windows\System32\bcrypt.dll
+0x00007ffc8ff70000 - 0x00007ffc8ffdb000 	C:\Windows\System32\WS2_32.dll
+0x00007ffc80920000 - 0x00007ffc80947000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffc847a0000 - 0x00007ffc847aa000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffc8d340000 - 0x00007ffc8d38b000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffc8d1a0000 - 0x00007ffc8d1b2000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffc8c5c0000 - 0x00007ffc8c5d2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffc876a0000 - 0x00007ffc876aa000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\jimage.dll
+0x00007ffc8c290000 - 0x00007ffc8c491000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffc7aae0000 - 0x00007ffc7ab14000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffc8dde0000 - 0x00007ffc8de62000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffc84530000 - 0x00007ffc84551000 	C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\java.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6280_none_60bc30a171f2f3f3;C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Duser.country=RU -Duser.language=ru -Duser.variant 
+java_command: org.example.lab1.KeyClient --host 127.0.0.1 --port 5555 --name load012
+java_class_path (initial): C:\Users\Lilianna\IdeaProjects\lab1\lab1\build\classes\java\main;C:\Users\Lilianna\IdeaProjects\lab1\lab1\build\resources\main;C:\Users\Lilianna\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcpkix-jdk18on\1.78.1\17b3541f736df97465f87d9f5b5dfa4991b37bb3\bcpkix-jdk18on-1.78.1.jar;C:\Users\Lilianna\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcutil-jdk18on\1.78.1\5353ca39fe2f148dab9ca1d637a43d0750456254\bcutil-jdk18on-1.78.1.jar;C:\Users\Lilianna\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcprov-jdk18on\1.78.1\39e9e45359e20998eb79c1828751f94a818d25f8\bcprov-jdk18on-1.78.1.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4196401152                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4196401152                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\
+PATH=C:\Program Files\Microsoft\jdk-21.0.8.9-hotspot\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\GitExtensions\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Lilianna\AppData\Local\Programs\Python\Launcher\;C:\Users\Lilianna\AppData\Local\Microsoft\WindowsApps;C:\Users\Lilianna\AppData\Local\Programs\Microsoft VS Code\bin;C:\ghcup\bin;C:\ProgramDa;C:\Program Files\CMake\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.2.0\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\GitExtensions\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Lilianna\AppData\Local\Programs\Python\Launcher\;C:\Program Files\OpenSSL-Win64\bin;
+USERNAME=Lilianna
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+TMP=C:\Users\Lilianna\AppData\Local\Temp
+TEMP=C:\Users\Lilianna\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 2 days 21:03 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (8 cores per cpu, 2 threads per core) family 6 model 154 stepping 3 microcode 0x429, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+Processor Information for the first 16 processors :
+  Max Mhz: 2300, Current Mhz: 2300, Mhz Limit: 2300
+
+Memory: 4k page, system-wide physical 16000M (3M free)
+TotalPageFile size 65152M (AvailPageFile size 77M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 16M, peak: 17M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.8+9-LTS) for windows-amd64 JRE (21.0.8+9-LTS), built on 2025-07-10T20:22:44Z by "MicrosoftCorporation" with unknown MS VC++:1944
+
+END.

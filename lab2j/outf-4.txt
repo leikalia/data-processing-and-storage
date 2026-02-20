@@ -1,0 +1,20 @@
+--- FINAL LIST (custom) size=18 ---
+BBBB
+CCCC
+NY-001
+Ny-100
+PARIS3
+Paris1
+RIO
+Rio
+TOKYO
+Tokyo
+ZZZZ
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ny-010
+paris2
+rio-2
+tokyo
+--- END FINAL ---

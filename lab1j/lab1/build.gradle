@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example.lab1'
+version = '1.0.0'
+
+repositories { mavenCentral() }
+
+dependencies {
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.78.1'
+    implementation 'org.bouncycastle:bcpkix-jdk18on:1.78.1'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+tasks.withType(JavaExec).configureEach {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    // по умолчанию бегаем сервер
+    mainClass = 'org.example.lab1.KeyServer'
+}
+
+// удобные задачи для клиента/сервера
+tasks.register('runServer', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.example.lab1.KeyServer'
+    args = (project.findProperty("args")?: "").toString().split("\\s+").findAll{ it }
+}
+tasks.register('runClient', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.example.lab1.KeyClient'
+    args = (project.findProperty("args")?: "").toString().split("\\s+").findAll{ it }
+}
