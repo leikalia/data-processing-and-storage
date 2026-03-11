@@ -1,0 +1,45 @@
+<people>
+    <person id="P1">
+        <firstname>John</firstname>
+        <surname>Smith</surname>
+        <gender>male</gender>
+        <children-number>2</children-number>
+        <children>
+            <son id="P3"/>
+            <daughter id="P4"/>
+        </children>
+        <wife>Mary Smith</wife>
+    </person>
+
+    <person>
+        <firstname>Mary</firstname>
+        <surname>Smith</surname>
+        <gender>female</gender>
+        <husband>John Smith</husband>
+        <children>
+            <son id="P3"/>
+            <daughter id="P4"/>
+        </children>
+    </person>
+
+    <person id="P3">
+        <fullname>
+            <first>Alex</first>
+            <family>Smith</family>
+        </fullname>
+        <gender>male</gender>
+        <father>John Smith</father>
+        <mother>Mary Smith</mother>
+        <siblings>P4</siblings>
+        <siblings-number>1</siblings-number>
+    </person>
+
+    <person id="P4">
+        <firstname>Emma</firstname>
+        <surname>Smith</surname>
+        <gender>female</gender>
+        <father>P1</father>
+        <mother>Mary Smith</mother>
+    </person>
+</people>
+
