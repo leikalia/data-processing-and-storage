@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="people" type="PeopleType"/>
+
+    <xs:complexType name="PeopleType">
+        <xs:sequence>
+            <xs:element name="person" type="PersonType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" minOccurs="0"/>
+            <xs:element name="surname" type="xs:string" minOccurs="0"/>
+            <xs:element name="gender" type="GenderType" minOccurs="0"/>
+
+            <xs:element name="fathers" type="RefListFatherType" minOccurs="0"/>
+            <xs:element name="mothers" type="RefListMotherType" minOccurs="0"/>
+            <xs:element name="parents" type="RefListParentType" minOccurs="0"/>
+
+            <xs:element name="spouses" type="RefListSpouseType" minOccurs="0"/>
+
+            <xs:element name="sons" type="RefListSonType" minOccurs="0"/>
+            <xs:element name="daughters" type="RefListDaughterType" minOccurs="0"/>
+            <xs:element name="children" type="RefListChildType" minOccurs="0"/>
+
+            <xs:element name="brothers" type="RefListBrotherType" minOccurs="0"/>
+            <xs:element name="sisters" type="RefListSisterType" minOccurs="0"/>
+            <xs:element name="siblings" type="RefListSiblingType" minOccurs="0"/>
+
+            <xs:element name="aliases" type="AliasListType" minOccurs="0"/>
+        </xs:sequence>
+
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="GenderType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="male"/>
+            <xs:enumeration value="female"/>
+            <xs:enumeration value="unknown"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="RefType">
+        <xs:attribute name="ref" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="RefListFatherType">
+        <xs:sequence>
+            <xs:element name="father" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListMotherType">
+        <xs:sequence>
+            <xs:element name="mother" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListParentType">
+        <xs:sequence>
+            <xs:element name="parent" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListSpouseType">
+        <xs:sequence>
+            <xs:element name="spouse" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListSonType">
+        <xs:sequence>
+            <xs:element name="son" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListDaughterType">
+        <xs:sequence>
+            <xs:element name="daughter" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListChildType">
+        <xs:sequence>
+            <xs:element name="child" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListBrotherType">
+        <xs:sequence>
+            <xs:element name="brother" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListSisterType">
+        <xs:sequence>
+            <xs:element name="sister" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RefListSiblingType">
+        <xs:sequence>
+            <xs:element name="sibling" type="RefType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AliasListType">
+        <xs:sequence>
+            <xs:element name="alias" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
