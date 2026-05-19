@@ -1,0 +1,25 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Dumps / local data
+demo.sql
+*.sql.bak
+lab6d/demo-20250901-3m.sql
+
+# Java / Gradle build garbage
+.gradle/
+build/
+out/
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
