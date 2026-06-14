@@ -1,25 +1,26 @@
-# Python
+﻿# Python
 .venv/
 venv/
 __pycache__/
 *.pyc
-.env
 
 # IDE
 .idea/
 .vscode/
 
-# Dumps / local data
-demo.sql
-*.sql.bak
-lab6d/demo-20250901-3m.sql
+# Local env / secrets
+.env
+lab6d/.env
 
-# Java / Gradle build garbage
+# Database dumps
+*.sql
+*.sql.bak
+!lab6d/sql/
+!lab6d/sql/*.sql
+
+# Build / misc
 .gradle/
 build/
 out/
 *.class
-
-# OS
-.DS_Store
-Thumbs.db
+*.log

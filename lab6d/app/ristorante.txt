@@ -1,0 +1,27 @@
+routes
+
+origin_kind = airport
+origin = AMD
+destination_kind = airport
+destination = BOM
+departure_date = 2025-12-01
+booking_class = Economy
+max_connections = 0
+limit = 50
+
+бронь
+  "flight_ids": [11066],
+  "fare_conditions": "Economy",
+  "passenger_id": "P1234567",
+  "passenger_name": "Lilianna Test"
+
+
+source
+destination
+
+departure_airport
+arrival_airport
+
+
+обработка ошибок сервака
+yaml 
